@@ -11,7 +11,7 @@ const $$ViewTransitions = createComponent(($$result, $$props, $$slots) => {
   Astro2.self = $$ViewTransitions;
   const { fallback = "animate" } = Astro2.props;
   return renderTemplate`<meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback"${addAttribute(fallback, "content")}>`;
-}, "C:/Users/USER/Desktop/ASTRO PROJECTS/elegant-spaces/node_modules/astro/components/ViewTransitions.astro", void 0);
+}, "C:/Users/USER/Desktop/ASTRO PROJECTS/elegant-spaces/node_modules/.pnpm/astro@4.15.1_rollup@4.21.2_typescript@5.5.4/node_modules/astro/components/ViewTransitions.astro", void 0);
 
 const servicios = [{
   id: 1,
