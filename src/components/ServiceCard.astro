@@ -1,0 +1,30 @@
+---
+type Props = {
+    name : string,
+    description : string,
+    imageUrl : string
+}
+
+const {name, description, imageUrl} = Astro.props
+---
+
+<div class="bg-white rounded-lg shadow-lg p-6 card-service">
+    <div class="w-full h-48 overflow-hidden rounded-lg">
+        <img src={imageUrl} alt={name} class="w-full h-48 object-cover  ">
+    </div>
+    <h3 class="text-2xl font-semibold mt-4">{name}</h3>
+    <p class="text-gray-600 mt-2">{description}</p>
+</div>
+
+<style>
+    
+    .card-service:hover img {
+    transform: scale(1.2) rotate(3deg); /* Aquí combinas el escalado */
+
+    }
+
+/* Agrega una transición para suavizar el cambio */
+.card-service img {
+    transition: transform 0.3s ease;
+}
+</style>
