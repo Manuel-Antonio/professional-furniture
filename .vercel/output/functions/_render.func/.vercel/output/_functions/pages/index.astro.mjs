@@ -1,7 +1,7 @@
 /* empty css                                 */
 import { c as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_BfSrewWf.mjs';
 import 'kleur/colors';
-import { p as projects, $ as $$Layout } from '../chunks/Layout_e7gBJXTU.mjs';
+import { p as projects, $ as $$Layout } from '../chunks/Layout_DBJsUf7b.mjs';
 import { $ as $$ProjectCard } from '../chunks/ProjectCard_DnneY8QM.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';

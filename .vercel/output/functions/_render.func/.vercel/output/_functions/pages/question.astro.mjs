@@ -2,7 +2,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as createAstro, d as renderComponent } from '../chunks/astro/server_BfSrewWf.mjs';
 import 'kleur/colors';
 import 'clsx';
-import { $ as $$Layout } from '../chunks/Layout_e7gBJXTU.mjs';
+import { $ as $$Layout } from '../chunks/Layout_DBJsUf7b.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro();
