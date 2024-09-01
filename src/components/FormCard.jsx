@@ -113,10 +113,8 @@ const FormCard = () => {
 
       setFormattedData(formattedString);
 
-      // Aquí creamos el botón de envío del correo con el mailto:
       const mailtoLink = `mailto:manuelhuaman1998@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formattedString)}`;
       
-      // Opcionalmente, podrías abrir directamente el cliente de correo:
       window.location.href = mailtoLink;
     } else {
       setIsFormValid(false);
