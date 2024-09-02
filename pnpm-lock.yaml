@@ -17,9 +17,6 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.15.1(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.10)
-      '@astrojs/vercel':
-        specifier: ^7.8.0
-        version: 7.8.0(astro@4.15.1(rollup@4.21.2)(typescript@5.5.4))
       astro:
         specifier: ^4.15.1
         version: 4.15.1(rollup@4.21.2)(typescript@5.5.4)
@@ -32,6 +29,10 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
+    devDependencies:
+      '@astrojs/vercel':
+        specifier: ^7.8.0
+        version: 7.8.0(astro@4.15.1(rollup@4.21.2)(typescript@5.5.4))
 
 packages:
 

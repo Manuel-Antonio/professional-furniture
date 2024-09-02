@@ -1,11 +1,8 @@
 ---
-// src/pages/proyectos/[id].astro
-
 import { projects } from "../../data/projects";
 import Layout from "../../layouts/Layout.astro";
 import type { Project } from "../../models/project";
 
-export const prerender = false;
 
 let {id} = Astro.params;
 let project: Project | undefined;
