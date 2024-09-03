@@ -2,6 +2,7 @@ interface Service {
     id: number;
     name: string;
     description: string;
-    imageUrl: string;
+    icon: string;
+    color: string;
   }
   

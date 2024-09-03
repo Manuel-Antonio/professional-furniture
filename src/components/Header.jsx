@@ -12,10 +12,21 @@ const Header = () => {
     setIsScrolled(window.scrollY > 0);
   };
 
+  const handleResize = () => {
+    if (window.innerWidth >= 768) {
+      setIsMenuOpen(false);
+    }
+  };
+
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -55,16 +66,20 @@ const Header = () => {
         {isMenuOpen && (
           <div
             id="mobile-menu"
-            class={`fixed inset-0 bg-white shadow-lg py-4 px-6 flex flex-col items-center space-y-4 transition-transform duration-300 transform ${
-              isMenuOpen ? "translate-y-0" : "-translate-y-full"
-            }`}
+            class="fixed inset-0 bg-white shadow-lg py-4 px-6 flex flex-col items-center space-y-4 transition-transform duration-300 transform translate-y-0"
           >
-            <a href="/" class="nav-link" onClick={() => setIsMenuOpen(false)}>Hogar</a>
-            <a href="/about" class="nav-link" onClick={() => setIsMenuOpen(false)}>Acerca</a>
-            <a href="/services" class="nav-link" onClick={() => setIsMenuOpen(false)}>Servicios</a>
-            <a href="/contact" class="nav-link" onClick={() => setIsMenuOpen(false)}>Contactar</a>
-            <a href="/question" class="nav-link" onClick={() => setIsMenuOpen(false)}>FAQ</a>
-            <a href="/projects" class="nav-link" onClick={() => setIsMenuOpen(false)}>Proyectos</a>
+            <button
+              class="self-end text-3xl text-gray-700 focus:outline-none"
+              onClick={toggleMenu}
+            >
+              <i class="fa-solid fa-times"></i>
+            </button>
+            <a href="/" class="nav-link" onClick={toggleMenu}>Hogar</a>
+            <a href="/about" class="nav-link" onClick={toggleMenu}>Acerca</a>
+            <a href="/services" class="nav-link" onClick={toggleMenu}>Servicios</a>
+            <a href="/contact" class="nav-link" onClick={toggleMenu}>Contactar</a>
+            <a href="/question" class="nav-link" onClick={toggleMenu}>FAQ</a>
+            <a href="/projects" class="nav-link" onClick={toggleMenu}>Proyectos</a>
           </div>
         )}
       </div>

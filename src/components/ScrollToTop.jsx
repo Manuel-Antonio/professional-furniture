@@ -1,24 +1,22 @@
 import { useState, useEffect } from 'preact/hooks';
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(true);
-
+  const [isVisible, setIsVisible] = useState(false);
   let scrollTimeout = null;
 
   const handleScroll = () => {
-    setIsVisible(false);
-    
     if (scrollTimeout) {
       clearTimeout(scrollTimeout);
     }
 
+    setIsVisible(false);
+
     scrollTimeout = setTimeout(() => {
-      setIsVisible(true);
-    }, 300); // Ajusta el tiempo para el retraso después de detener el scroll
+      setIsVisible(window.scrollY > 300);
+    }, 300);
   };
 
   const scrollToTop = () => {
-    console.log("Hola")
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -41,7 +39,7 @@ const ScrollToTop = () => {
       {isVisible && (
         <button
           type="button"
-          onClick={() => scrollToTop}
+          onClick={scrollToTop}
           className="fixed bottom-4 right-4 bg-red-500 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 ease-in-out hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           aria-label="Scroll to top"
         >

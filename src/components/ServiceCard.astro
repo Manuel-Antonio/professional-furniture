@@ -1,29 +1,27 @@
 ---
 type Props = {
-    name : string,
-    description : string,
-    imageUrl : string
-}
+  name: string;
+  description: string;
+  icon: string;
+  color:string;
+};
 
-const {name, description, imageUrl} = Astro.props
+const { name, description, icon, color } = Astro.props;
+console.log(color)
 ---
 
-<div class="bg-white rounded-lg shadow-lg p-6 card-service">
-    <div class="w-full h-48 overflow-hidden rounded-lg">
-        <img src={imageUrl} alt={name} class="w-full h-48 object-cover  ">
-    </div>
-    <h3 class="text-2xl font-semibold mt-4">{name}</h3>
-    <p class="text-gray-600 mt-2">{description}</p>
+<div 
+class:list={[
+    "rounded-lg text-white p-8 hover:shadow-lg transition text-center sm:text-left",
+    `bg-${color}-600 bg-${color}-500`
+]}>
+  <div class="flex justify-center mb-6">
+    <i class={`fas ${icon} h-24 w-24 flex items-center justify-center text-5xl`}
+    ></i>
+  </div>
+  <h3 class="text-xl font-bold mb-4">{name}</h3>
+  <p class="mb-6">
+    {description}
+  </p>
 </div>
-
-<style>
-    
-    .card-service:hover img {
-    transform: scale(1.2) rotate(3deg);
-
-    }
-
-    .card-service img {
-        transition: transform 0.3s ease;
-    }
-</style>
+<style></style>
